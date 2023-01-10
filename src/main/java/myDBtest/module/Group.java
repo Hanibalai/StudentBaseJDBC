@@ -1,4 +1,4 @@
-package myDBtest.serves;
+package myDBtest.module;
 
 import java.util.ArrayList;
 

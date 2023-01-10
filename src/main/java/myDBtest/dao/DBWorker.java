@@ -1,6 +1,6 @@
 package myDBtest.dao;
 
-import myDBtest.serves.Student;
+import myDBtest.module.Student;
 
 import java.sql.*;
 import java.util.ArrayList;

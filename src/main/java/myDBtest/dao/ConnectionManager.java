@@ -12,6 +12,8 @@ public class ConnectionManager {
 
     public ConnectionManager() {
         try {
+            Driver driver = new com.mysql.cj.jdbc.Driver();
+            DriverManager.registerDriver(driver);
             Connection connection = DriverManager.getConnection(
                     PropertiesUtil.get(URL_KEY),
                     PropertiesUtil.get(USER_KEY),

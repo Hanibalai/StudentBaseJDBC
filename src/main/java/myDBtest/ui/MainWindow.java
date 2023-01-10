@@ -1,8 +1,8 @@
 package myDBtest.ui;
 
-import myDBtest.serves.Query;
-import myDBtest.serves.Reader;
-import myDBtest.serves.Updater;
+import myDBtest.service.Query;
+import myDBtest.service.Reader;
+import myDBtest.service.Updater;
 
 public class MainWindow {
     public void start() {

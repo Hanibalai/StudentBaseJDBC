@@ -1,4 +1,4 @@
-package myDBtest.serves;
+package myDBtest.service;
 
 import myDBtest.ui.Menu;
 import myDBtest.ui.Validator;
