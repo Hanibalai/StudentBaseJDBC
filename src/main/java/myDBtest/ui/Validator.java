@@ -12,19 +12,29 @@ public final class Validator {
         return option;
     }
 
-    public static int getIdFromTable(int maxId) {
+    public static long getIdFromTable(ArrayList<Long> idList) {
+        boolean isCorrect = false;
+        long id;
         System.out.println("Please enter the student ID from the table.");
-        int studentId;
-        while ((studentId = IOWorker.getInt()) < 1 || studentId > maxId)
+        idList.forEach(System.out::println);
+        while (true) {
+            id = IOWorker.getLong();
+            for (Long i : idList)
+                if (i == id) {
+                    isCorrect = true;
+                    break;
+                }
+            if (isCorrect) break;
             System.out.println("There are no students with the given ID.\nPlease try again.");
-        return studentId;
+        }
+        return id;
     }
 
     public static String getGroupNameFromTable(ArrayList<String> groupNames) {
         boolean isCorrect = false;
         String groupName;
         System.out.println("Please select a group name from the list:");
-        IOWorker.showList(groupNames);
+        groupNames.forEach(System.out::println);
         while (true) {
             groupName = IOWorker.getString();
             for (String name : groupNames)

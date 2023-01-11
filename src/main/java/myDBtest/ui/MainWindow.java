@@ -1,8 +1,7 @@
 package myDBtest.ui;
 
-import myDBtest.service.Query;
-import myDBtest.service.Reader;
-import myDBtest.service.Updater;
+import myDBtest.domain.StudentHandler;
+import myDBtest.domain.GroupHandler;
 
 public class MainWindow {
     public void start() {
@@ -12,15 +11,23 @@ public class MainWindow {
         Menu.initialize();
         Menu.showOptions();
 
+        StudentHandler studentHandler = new StudentHandler();
+        GroupHandler groupHandler = new GroupHandler();
+
         while (!exit) {
             int option = Validator.getOption();
             switch (option) {
-                case 1, 2, 3 -> new Reader().query(Menu.getOptions().get(option));
-                case 4, 5 -> new Updater().query(Menu.getOptions().get(option));
+                case 1 -> IOWorker.printResultList(studentHandler.getAllStudents());
+                case 2 -> IOWorker.printResult(studentHandler.getOneStudent().toString());
+                case 3 -> IOWorker.printResult(groupHandler.readGroup());
+                case 4 -> IOWorker.printResultList(studentHandler.addStudent());
+                case 5 -> IOWorker.printResultList(studentHandler.removeOneStudent());
                 case 6 -> Menu.showOptions();
                 case 0 -> {
                     IOWorker.closeInputReader();
-                    Query.closeConnection();
+                    studentHandler.close();
+                    groupHandler.close();
+
                     exit = true;
                 }
             }

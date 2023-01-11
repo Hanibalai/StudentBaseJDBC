@@ -6,10 +6,14 @@ public class Group {
     private String groupName;
     private ArrayList<Student> students = new ArrayList<>();
 
-    public Group(String groupName, Student student) {
+    public Group(String groupName, ArrayList<Student> students) {
         this.groupName = groupName;
-        students.add(student);
+        this.students = students;
     }
+
+    public Group() {
+    }
+
     public String getGroupName() {
         return groupName;
     }

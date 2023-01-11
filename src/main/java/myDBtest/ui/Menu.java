@@ -3,6 +3,7 @@ package myDBtest.ui;
 import java.util.ArrayList;
 
 public final class Menu {
+
     private final static ArrayList<String> options = new ArrayList<>();
 
     public static void initialize() {

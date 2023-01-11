@@ -2,35 +2,34 @@ package myDBtest.module;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Locale;
 
 public class Student {
-    private int id;
+    private long id;
     private String name;
     private String surname;
     private String patronymic;
-    private String birthdate;
-    private Group group;
+    private Date birthdate;
+    private String groupName;
     private static final SimpleDateFormat formatter = new SimpleDateFormat("d MMMM yyyy г.", Locale.getDefault());
 
-    public Student(int id, String name, String surname, String patronymic, Date birthdate, String groupName) {
+    public Student(long id, String name, String surname, String patronymic, Date birthdate, String groupName) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
-        this.birthdate = formatter.format(birthdate);
-        this.group = new Group(groupName, this);
+        this.birthdate = birthdate;
+        this.groupName = groupName;
     }
 
     public Student() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -58,23 +57,20 @@ public class Student {
         this.patronymic = patronymic;
     }
 
-    public String getBirthdate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 
     public void setBirthdate(Date birthdate) {
-        this.birthdate = formatter.format(birthdate);
+        this.birthdate = birthdate;
     }
 
     public String getGroupName() {
-        return this.group.getGroupName();
+        return groupName;
     }
 
-    public ArrayList<Student> getGroup() {
-        return this.group.getStudents();
-    }
     public void setGroupName(String groupName) {
-        this.group = new Group(groupName, this);
+        this.groupName = groupName;
     }
 
     @Override
@@ -83,7 +79,7 @@ public class Student {
                 " | name: " + getName() +
                 ", surname: " + getSurname() +
                 ", patronymic: " + getPatronymic() +
-                " | birthdate: " + getBirthdate() +
+                " | birthdate: " + formatter.format(getBirthdate()) +
                 " | group: " + getGroupName();
     }
 }
