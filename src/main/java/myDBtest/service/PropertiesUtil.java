@@ -1,4 +1,4 @@
-package myDBtest.dao;
+package myDBtest.service;
 
 import java.io.IOException;
 import java.util.Properties;

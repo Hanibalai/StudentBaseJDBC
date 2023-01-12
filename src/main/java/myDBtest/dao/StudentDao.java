@@ -1,11 +1,11 @@
 package myDBtest.dao;
 
-import myDBtest.module.Student;
+import myDBtest.domain.Student;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class StudentDao{
+public class StudentDao {
     private static final ConnectionManager connectionManager = new ConnectionManager();
     String SELECT_ALL = "SELECT * FROM Students;";
     String SELECT_ONE = "SELECT * FROM Students WHERE id = ?;";

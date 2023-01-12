@@ -1,8 +1,9 @@
-package myDBtest.module;
+package myDBtest.domain;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import java.util.Objects;
 
 public class Student {
     private long id;
@@ -81,5 +82,21 @@ public class Student {
                 ", patronymic: " + getPatronymic() +
                 " | birthdate: " + formatter.format(getBirthdate()) +
                 " | group: " + getGroupName();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student student)) return false;
+        return getId() == student.getId() && getName().equals(student.getName())
+                && getSurname().equals(student.getSurname())
+                && getPatronymic().equals(student.getPatronymic())
+                && getBirthdate().equals(student.getBirthdate())
+                && getGroupName().equals(student.getGroupName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getSurname(), getPatronymic(), getBirthdate(), getGroupName());
     }
 }

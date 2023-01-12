@@ -1,7 +1,7 @@
 package myDBtest.dao;
 
-import myDBtest.module.Group;
-import myDBtest.module.Student;
+import myDBtest.domain.Group;
+import myDBtest.domain.Student;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

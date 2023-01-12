@@ -1,5 +1,7 @@
 package myDBtest.dao;
 
+import myDBtest.service.PropertiesUtil;
+
 import java.sql.*;
 
 public class ConnectionManager {

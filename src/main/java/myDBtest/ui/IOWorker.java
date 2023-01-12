@@ -1,7 +1,7 @@
 package myDBtest.ui;
 
-import myDBtest.module.Group;
-import myDBtest.module.Student;
+import myDBtest.domain.Group;
+import myDBtest.domain.Student;
 
 import java.io.BufferedReader;
 import java.io.IOException;

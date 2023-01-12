@@ -1,7 +1,7 @@
-package myDBtest.domain;
+package myDBtest.service;
 
 import myDBtest.dao.GroupDao;
-import myDBtest.module.Group;
+import myDBtest.domain.Group;
 import myDBtest.ui.Validator;
 
 import java.util.ArrayList;

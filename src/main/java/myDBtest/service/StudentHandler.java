@@ -1,7 +1,7 @@
-package myDBtest.domain;
+package myDBtest.service;
 
 import myDBtest.dao.StudentDao;
-import myDBtest.module.Student;
+import myDBtest.domain.Student;
 import myDBtest.ui.Validator;
 
 import java.sql.Date;

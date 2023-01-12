@@ -1,7 +1,7 @@
 package myDBtest.ui;
 
-import myDBtest.domain.StudentHandler;
-import myDBtest.domain.GroupHandler;
+import myDBtest.service.StudentHandler;
+import myDBtest.service.GroupHandler;
 
 public class MainWindow {
     public void start() {
